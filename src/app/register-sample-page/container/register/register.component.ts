@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { RegisterService } from '../../services/register.service';
 
 @Component({
   selector: 'app-register',
   template: `
-    <p>
-      register works!
-    </p>
+    <app-register-view
+      [registerData]="registerData | async"
+    ></app-register-view>
   `,
-  styles: [
-  ]
+  styles: [],
+  providers: [RegisterService],
 })
 export class RegisterComponent implements OnInit {
+  registerData = this.registerService.registerData;
 
-  constructor() { }
+  constructor(private registerService: RegisterService) {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
