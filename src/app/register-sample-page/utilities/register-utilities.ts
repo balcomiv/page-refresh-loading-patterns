@@ -1,7 +1,7 @@
 import { merge, Observable, of } from 'rxjs';
 import { catchError, mapTo } from 'rxjs/operators';
 
-function isLoading(
+export function isLoading(
   trigger: Observable<unknown>,
   content: Observable<unknown>
 ): Observable<boolean> {

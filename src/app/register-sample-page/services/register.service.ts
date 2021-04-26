@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import {
   BehaviorSubject,
   combineLatest,
+  merge,
   Observable,
   of,
   ReplaySubject,
 } from 'rxjs';
-import { switchMap, tap } from 'rxjs/operators';
+import { catchError, mapTo, switchMap, tap } from 'rxjs/operators';
 
 @Injectable()
 export class RegisterService {
@@ -27,7 +28,8 @@ export class RegisterService {
     ]).pipe(
       tap((values) => console.log('Tap: ', values)),
       switchMap((values) => {
-        return of(`test data ${values}`);
+        //  return of(`test data ${values}`);
+        throw new Error('test error');
       })
     );
 
@@ -45,4 +47,17 @@ export class RegisterService {
     //   this.refreshToken.next(null);
     // }, 8000);
   }
+}
+
+function isLoading(
+  trigger: Observable<unknown>,
+  content: Observable<unknown>
+): Observable<boolean> {
+  return merge(
+    trigger.pipe(mapTo(true)),
+    content.pipe(
+      catchError((e) => of(e)),
+      mapTo(false)
+    )
+  );
 }
