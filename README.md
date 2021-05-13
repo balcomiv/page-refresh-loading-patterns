@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # Commands
 
-- `npx -p @angular/cli ng new blogs-netbasal`
+- `npx -p @angular/cli ng new blogs-netbasal --strict --style=scss --routing`
 
 - `npm i @briebug/cypress-schematic`
 
@@ -18,7 +18,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Eyas's Blog
 
-[Data and Page Content Refresh patterns in Angular](https://www.sipios.com/blog-tech/reactive-programming-rxjs-observables-angular)
+[Clean code through Reactive programming in Angular with RxJS](https://www.sipios.com/blog-tech/reactive-programming-rxjs-observables-angular)
+
+- [Data and Page Content Refresh patterns in Angular](https://blog.eyas.sh/2018/12/data-and-page-content-refresh-patterns-in-angular/)
 
 [Better Loading and Error Handling in Angular](https://blog.eyas.sh/2020/05/better-loading-and-error-handling-in-angular)
 
